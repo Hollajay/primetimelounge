@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --transparentblack: #00000084;
+  --primary: #ed2f3c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer utilities {
+    @keyframes gradientChange {
+        0% {
+            background-position: 0%
+        }
+
+        50% {
+            background-position: 100%
+        }
+
+        100% {
+            background-position: 0%
+        }
+    }
+
+    .gradient {
+        background: linear-gradient(90deg, blue, red);
+        background-size: 200% 200%;
+    }
+
+    .element-to-rotate {
+        animation: gradientChange 4s ease infinite;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+
