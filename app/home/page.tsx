@@ -1,6 +1,12 @@
-import CustomButton from "@/components/ui/CustomButton";
+
 import Image from "next/image";
 import Link from "next/link";
+import './home.css'
+import { UpcomingShows } from "@/components/upcomingCarousel/carousel";
+import { WeeklyActivities } from "@/components/WeeklyActivities";
+import { RecreationSection } from "@/components/Recreations";
+import CloudNineSection from "@/components/Cloud";
+
 
 const HomePage = () => {
   return (
@@ -39,13 +45,14 @@ const HomePage = () => {
 
       {/* about us */}
 
-      <section className="">
+      <section className="bg-background">
         <h1 className="text-4xl text-center py-10 ">About Us</h1>
-        <div className=" px-20 flex flex-row-reverse items-center justify-between w-full">
-          <div className="w-1/2">
+        <div className=" px-20 flex gap-12 flex-row-reverse items-center justify-between w-full">
+          <div className="w-1/2 ">
             <Image
               width={"500"}
               height="700"
+              className="w-full h-full rounded-2xl object-cover"
               src="/img/Primetime lounge.jpeg"
               alt="about-img"
             />
@@ -77,9 +84,42 @@ const HomePage = () => {
             <Link href={"/about"} className="">
               More
             </Link>
+           
           </div>
         </div>
       </section>
+   <WeeklyActivities/>
+
+
+
+
+    <div id="parallax-world-of-ugg">
+      {/* Section One */}
+      <section className="parallax-one flex items-center justify-center">
+        <div className="w-full py-40 bg-transparent flex flex-col items-center justify-center">
+          <h1 className="text-6xl">ROOFTOP</h1>
+          <p className="text-3xl">Where the city lights meet the vibe.</p>
+          <p className="text-3xl">Every Thursday, we go higher.</p>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 text-center">
+        <UpcomingShows/>
+      </section>
+
+     
+
+     <RecreationSection/>
+     <CloudNineSection/>
+     
+     
+
+     
+      <section className="parallax-three flex items-center justify-center">
+        <h2 className="text-white text-4xl font-bold">Premium Lounge</h2>
+      </section>
+    </div>
+
     </main>
   );
 };

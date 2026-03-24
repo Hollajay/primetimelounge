@@ -1,0 +1,45 @@
+#parallax-world-of-ugg {
+  width: 100%;
+}
+
+.parallax-one {
+  background-image: url('../../public/img/rooftop1.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-two {
+  padding: 200px 0;
+  background-image: url('../../public/img/rooftop1.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-three {
+  padding: 200px 0;
+  background-image: url('../../public/img/rooftop2.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.line-break {
+  border-bottom: 1px solid black;
+  width: 150px;
+  margin: 20px auto;
+}
+
+.block {
+  max-width: 600px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .parallax-one,
+  .parallax-two,
+  .parallax-three {
+    padding: 100px 0;
+    background-attachment: scroll; /* fix mobile */
+  }
+}

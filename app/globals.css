@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
-:root {
-  --transparentblack: #00000084;
-  --primary: #ed2f3c;
+html{
+    scroll-behavior: smooth;
+}
+
+@theme{
+    --color-background:  #FAFBFC ;
+    --color-primary: #ed2f3c;
+    --color-secondary-color: #302e47;
+    --color-tertiary: #926e6eba;
+    --color-overlay: #0000005d;
 }
 
 @layer utilities {
@@ -29,6 +36,9 @@
         animation: gradientChange 4s ease infinite;
     }
 }
+
+
+
 
 
 
