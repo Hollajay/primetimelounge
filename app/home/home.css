@@ -17,7 +17,7 @@
 }
 
 .parallax-three {
-  padding: 200px 0;
+  padding: 10px 0;
   background-image: url('../../public/img/rooftop2.jpeg');
   background-attachment: fixed;
   background-size: cover;

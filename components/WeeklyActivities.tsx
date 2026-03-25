@@ -7,29 +7,50 @@ import { Dumbbell, Waves, Goal, CircleDot } from "lucide-react";
 
 const activities = [
   {
-    title: "Swimming Pool",
-    subtitle: "Luxury poolside experience",
-    details: "Open daily • VIP cabanas • Night lighting",
+    title: "Monday",
+    subtitle: "Karoke Night",
+    details: "Host by Yemi . Dj pumpy",
     image: "/img/rooftop1.jpeg",
     icon: <Waves size={22} />,
   },
   {
-    title: "Football Pitch",
+    title: "Tuesday",
     subtitle: "Night games under lights",
     details: "5-a-side • Turf • Book slots",
     image: "/img/primetime football.jpeg",
     icon: <Goal size={22} />,
   },
   {
-    title: "Gym",
+    title: "Wenesday",
     subtitle: "Modern fitness zone",
     details: "24/7 • Trainers available",
     image: "/img/gym.jpg",
     icon: <Dumbbell size={22} />,
   },
   {
-    title: "Snooker",
+    title: "Thurdays",
     subtitle: "Premium snooker lounge",
+    details: "Private tables • Chill bar",
+    image: "/img/snooker.jpg",
+    icon: <CircleDot size={22} />,
+  },
+  {
+    title: "Friday",
+    subtitle: "Clound 9",
+    details: "Private tables • Chill bar",
+    image: "/img/snooker.jpg",
+    icon: <CircleDot size={22} />,
+  },
+  {
+    title: "Saturday",
+    subtitle: "Premium snooker lounge",
+    details: "Private tables • Chill bar",
+    image: "/img/snooker.jpg",
+    icon: <CircleDot size={22} />,
+  },
+  {
+    title: "Sunday",
+    subtitle: "Clound 9",
     details: "Private tables • Chill bar",
     image: "/img/snooker.jpg",
     icon: <CircleDot size={22} />,
@@ -49,10 +70,10 @@ export  function WeeklyActivities() {
       {/* Title */}
       <div className="text-center mb-20 relative z-10">
         <h2 className="text-5xl font-bold text-white tracking-widest">
-          RECREATION
+          WEEKLY ACTIVITIES
         </h2>
         <p className="text-gray-400 mt-3">
-          Luxury. Energy. Experience.
+         Every day is a different vibe  
         </p>
       </div>
 
@@ -67,64 +88,49 @@ export  function WeeklyActivities() {
 }
 
 function Card({ item, index }: any) {
-  const [flip, setFlip] = useState(false);
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-
-  const handleMove = (e: any) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    setRotate({
-      x: ((y / rect.height) - 0.5) * 25,
-      y: ((x / rect.width) - 0.5) * -25,
-    });
-  };
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 120 }}
+      initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.2, duration: 0.8 }}
-      className="perspective"
+      viewport={{ once: true }}
+      transition={{
+        delay: index * 0.15,
+        duration: 0.7,
+        ease: "easeOut",
+      }}
+      className="group"
     >
-      <div
-        onMouseMove={handleMove}
-        onMouseLeave={() => setRotate({ x: 0, y: 0 })}
-        onClick={() => setFlip(!flip)}
-        style={{
-          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-        }}
-        className="relative h-[320px] cursor-pointer transition-transform duration-300"
-      >
-        <div className={`relative w-full h-full transition duration-700 transform-style ${flip ? "rotate-y-180" : ""}`}>
-          
-          {/* FRONT */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden backface">
-            <img src={item.image} className="w-full h-full object-cover scale-110 group-hover:scale-125 transition duration-700" />
-            <div className="absolute inset-0 bg-black/60" />
+      {/* CARD */}
+      <div className="rounded-2xl overflow-hidden bg-zinc-900 border border-white/5 hover:border-yellow-500/40 transition duration-500">
 
-            <div className="absolute bottom-0 p-6">
-              <div className="text-yellow-400 mb-2">{item.icon}</div>
-              <h3 className="text-white font-semibold">{item.title}</h3>
-              <p className="text-gray-300 text-sm">{item.subtitle}</p>
-            </div>
+        {/* IMAGE */}
+        <div className="relative h-[220px] overflow-hidden">
+          <img
+            src={item.image}
+            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+          />
+
+          {/* 🔥 DAY TAG (TOP LEFT) */}
+          <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-xs text-yellow-400 border border-yellow-500/30">
+            {item.title}
           </div>
 
-          {/* BACK */}
-          <div className="absolute inset-0 rounded-2xl bg-black border border-yellow-500/40 p-6 rotate-y-180 backface flex flex-col justify-center items-center text-center">
-            <h3 className="text-white font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-400 text-sm">{item.details}</p>
-
-            <button className="mt-4 px-4 py-2 bg-yellow-500 text-black rounded-full text-sm hover:scale-110 transition">
-              Book Now
-            </button>
-          </div>
-
+          {/* DARK OVERLAY */}
+          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-500" />
         </div>
 
-        {/* Glow Pulse */}
-        <div className="absolute inset-0 rounded-2xl animate-pulse border border-yellow-500/20"></div>
+        {/* TEXT BELOW IMAGE */}
+        <div className="p-5">
+          <div className="text-yellow-400 mb-2">{item.icon}</div>
+
+          <h3 className="text-white font-semibold text-lg">
+            {item.subtitle}
+          </h3>
+
+          <p className="text-gray-400 text-sm mt-1">
+            {item.details}
+          </p>
+        </div>
       </div>
     </motion.div>
   );
