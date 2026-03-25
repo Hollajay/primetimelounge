@@ -5,11 +5,11 @@ const About = () => {
   return (
     <div>
         <Breadcrumb
-  title="Gallery"
+  title="About Us"
   image="/img/hero.jpg"
   items={[
     { name: "Home", href: "/" },
-    { name: "Gallery" },
+    { name: "About" },
   ]}
 />
     </div>

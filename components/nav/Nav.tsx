@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* LOGO */}
           <div className="text-white text-xl font-bold ">
-            <Image width={100} height={100} className="w-18 h-18 object-cover" src={'/img/logo.png'}  alt='logo' />
+           <Link href={'/'}> <Image width={100} height={100} className="w-18 h-18 object-cover" src={'/img/logo.png'}  alt='logo' />  </Link> 
           </div>
 
           {/* RIGHT LINKS */}
