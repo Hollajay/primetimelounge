@@ -11,49 +11,49 @@ const activities = [
     subtitle: "Karoke Night",
     details: "Host by Yemi . Dj pumpy",
     image: "/img/rooftop1.jpeg",
-    icon: <Waves size={22} />,
+    
   },
   {
     title: "Tuesday",
     subtitle: "Night games under lights",
     details: "5-a-side • Turf • Book slots",
     image: "/img/primetime football.jpeg",
-    icon: <Goal size={22} />,
+    
   },
   {
     title: "Wenesday",
     subtitle: "Modern fitness zone",
     details: "24/7 • Trainers available",
     image: "/img/gym.jpg",
-    icon: <Dumbbell size={22} />,
+   
   },
   {
     title: "Thurdays",
     subtitle: "Premium snooker lounge",
     details: "Private tables • Chill bar",
     image: "/img/snooker.jpg",
-    icon: <CircleDot size={22} />,
+   
   },
   {
     title: "Friday",
     subtitle: "Clound 9",
     details: "Private tables • Chill bar",
     image: "/img/snooker.jpg",
-    icon: <CircleDot size={22} />,
+    
   },
   {
     title: "Saturday",
     subtitle: "Premium snooker lounge",
     details: "Private tables • Chill bar",
     image: "/img/snooker.jpg",
-    icon: <CircleDot size={22} />,
+    
   },
   {
     title: "Sunday",
     subtitle: "Clound 9",
     details: "Private tables • Chill bar",
     image: "/img/snooker.jpg",
-    icon: <CircleDot size={22} />,
+    
   },
 ];
 

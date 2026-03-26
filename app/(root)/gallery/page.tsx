@@ -37,7 +37,13 @@ export default function GalleryPage() {
             { name: "Gallery" },
           ]}
         />
-    <section className="bg-black text-white py-24 px-6">
+    <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
+
+       {/* BACKGROUND GLOW */}
+         <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/20 blur-[120px]" />
+
+        {/* TITLE */}
 
       {/* 🔥 TITLE */}
       <div className="text-center mb-12">

@@ -8,13 +8,13 @@ const activities = [
   {
     title: "Swimming Pool",
     subtitle: "Luxury poolside experience",
-    image: "/img/hero.jpg",
+    image: "/img/swimming.jpg",
     icon: <Waves size={22} />,
   },
   {
     title: "Football Pitch",
     subtitle: "Night games under lights",
-    image: "/img/hero.jpg",
+    image: "/img/football.jpg",
     icon: <Goal size={22} />,
   },
   {
@@ -68,8 +68,8 @@ function Card({ item, index }: any) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const rotateX = ((y / rect.height) - 0.5) * 20;
-    const rotateY = ((x / rect.width) - 0.5) * -20;
+    const rotateX = ((y / rect.height) - 0.5) * 12;
+    const rotateY = ((x / rect.width) - 0.5) * -12;
 
     setRotate({ x: rotateX, y: rotateY });
   };
@@ -90,44 +90,42 @@ function Card({ item, index }: any) {
         style={{
           transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
         }}
-        className="relative h-[300px] rounded-2xl transition-transform duration-300 ease-out group"
+        className="relative h-[320px] rounded-2xl overflow-hidden transition-transform duration-300 group"
       >
-        {/* Animated Border Glow */}
-        <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 animate-[spin_6s_linear_infinite]">
-          <div className="w-full h-full bg-black rounded-2xl"></div>
-        </div>
+        {/* 🔥 IMAGE */}
+        <img
+          src={item.image}
+          alt={item.title}
+          className="absolute inset-0 w-full h-full object-cover 
+          group-hover:scale-110 transition duration-700"
+        />
 
-        {/* Image */}
-        <div className="absolute inset-0 overflow-hidden rounded-2xl">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover scale-100 group-hover:scale-125 transition duration-700"
-          />
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
-        </div>
+        {/* 🔥 GRADIENT OVERLAY (NOT TOO DARK) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-        {/* Content */}
-        <div className="relative h-full p-6 flex flex-col justify-end backdrop-blur-md">
+        {/* 🔥 CONTENT */}
+        <div className="relative h-full p-6 flex flex-col justify-end">
           
-          {/* Icon */}
-          <div className="mb-3 text-yellow-400 group-hover:scale-125 transition">
+          <div className="mb-3 text-yellow-400 group-hover:scale-110 transition">
             {item.icon}
           </div>
 
-          {/* Title */}
-          <h3 className="text-white text-lg font-semibold tracking-wide">
+          <h3 className="text-white text-xl font-semibold tracking-wide">
             {item.title}
           </h3>
 
-          {/* Subtitle */}
           <p className="text-gray-300 text-sm mt-1">
             {item.subtitle}
           </p>
+
+          {/* 🔥 EXPLORE LINK */}
+          <span className="mt-3 text-yellow-400 text-sm opacity-0 group-hover:opacity-100 transition">
+            Explore →
+          </span>
         </div>
 
-        {/* Neon Glow on Hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 shadow-[0_0_40px_rgba(255,215,0,0.6)]"></div>
+        {/* 🔥 SOFT GLOW (CLEAN, NOT TOO MUCH) */}
+        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 shadow-[0_0_30px_rgba(255,215,0,0.4)]"></div>
       </div>
     </motion.div>
   );

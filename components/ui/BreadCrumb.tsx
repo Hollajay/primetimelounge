@@ -17,7 +17,7 @@ interface HeroBreadcrumbProps {
 export default function Breadcrumb({ items, title, image }: HeroBreadcrumbProps) {
   return (
     <section
-      className="relative h-72 md:h-96 w-full flex flex-col justify-center items-center text-center"
+      className="relative h-72 md:h-96 w-full flex flex-col justify-center items-start md:pl-20 pl-8"
       style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       {/* Overlay for better text visibility */}
@@ -39,7 +39,7 @@ export default function Breadcrumb({ items, title, image }: HeroBreadcrumbProps)
             ) : (
               <span>{item.name}</span>
             )}
-            {idx < items.length - 1 && <ChevronRight size={16} />}
+            {idx < items.length - 1 && <ChevronRight className="text-yellow-500" size={20} />}
           </span>
         ))}
       </nav>

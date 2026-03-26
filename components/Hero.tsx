@@ -57,7 +57,7 @@ export default function HeroSlider() {
       <div className="absolute inset-0 bg-black/60 z-30" />
 
       {/* 🔥 CONTENT */}
-      <div className="absolute inset-0 z-40 flex flex-col items-center justify-center text-center px-4">
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4">
         <h1 className="md:text-[80px] text-[40px] text-white font-bold tracking-widest">
           PRIME TIME LOUNGE
         </h1>
@@ -86,7 +86,7 @@ export default function HeroSlider() {
           >
             <div
               className={`h-full bg-yellow-500 ${
-                i === index ? "animate-[progress_6s_linear]" : ""
+                i === index ? "animate-[progress_6s_linear] " : ""
               }`}
             />
           </div>

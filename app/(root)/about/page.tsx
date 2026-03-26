@@ -15,7 +15,12 @@ export default function About() {
         ]}
       />
     
-    <section className="bg-black text-white py-24 px-6">
+    <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
+        {/* BACKGROUND GLOW */}
+         <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/20 blur-[120px]" />
+        {/* TITLE */}
+
       {/* 🔥 INTRO */}
       <div className="max-w-5xl mx-auto text-center mb-20">
         <h2 className="text-4xl md:text-5xl font-bold tracking-wide">

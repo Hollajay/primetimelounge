@@ -8,8 +8,8 @@ import "react-datepicker/dist/react-datepicker.css";
 const slides = [
   "/img/hero.jpg",
   "/img/hero.jpg",
-  "/img/hotel-room1.jpg",
-  "/img/hotel-room2.jpg",
+  "/img/hero.jpg",
+  "/img/hero.jpg",
 ];
 
 export default function HotelBookingPage() {
@@ -32,24 +32,42 @@ export default function HotelBookingPage() {
         items={[{ name: "Home", href: "/" }, { name: "Hotel" }]}
       />
 
-      <section className="bg-black text-white py-24 px-6">
-       
+      <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
 
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start">
+        {/* BACKGROUND GLOW */}
+         <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/20 blur-[120px]" />
+
+        {/* TITLE */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Stay in Style
+          </h1>
+          <p className="text-gray-400 mt-3">
+            Premium living, elevated experiences, and unmatched comfort
+          </p>
+        </div>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           {/* TEXT */}
-          <div className="md:w-1/2 text-gray-400 space-y-4">
-            <p>
-               Experience luxury and comfort in every corner of our hotel. From our
-    beautifully designed interiors to our stunning rooftop views, every
-    moment here is crafted to give you a premium relaxation experience.
-    Whether you are staying for business or pleasure, we guarantee a
-    memorable stay.
+          <div className="md:w-1/2 text-white  space-y-4">
+            <p className="text-center">
+              Welcome to Prime Time Hotel — where sophistication meets comfort
+              in perfect harmony. Designed for those who appreciate the finer
+              things, our space blends modern luxury with a calm and inviting
+              atmosphere, creating an experience that goes beyond just a stay.
             </p>
-           
+
+            <p className="hidden md:block text-center">
+              From elegantly styled rooms to breathtaking rooftop views, every
+              detail is carefully curated to deliver excellence. Whether you're
+              visiting for business, relaxation, or a special occasion, Prime
+              Time Hotel offers a seamless blend of class, comfort, and
+              unforgettable moments.
+            </p>
           </div>
 
           {/* SLIDER */}
-          <div className="md:w-1/2 relative h-96 rounded-2xl overflow-hidden border border-white/10">
+          <div className="md:w-1/2 w-full relative h-96 rounded-2xl overflow-hidden border border-white/10">
             {slides.map((img, i) => (
               <div
                 key={i}
@@ -66,6 +84,13 @@ export default function HotelBookingPage() {
             ))}
             <div className="absolute inset-0 bg-black/30" />
           </div>
+          <p className="block md:hidden text-center  mt-4">
+            From elegantly styled rooms to breathtaking rooftop views, every
+            detail is carefully curated to deliver excellence. Whether you're
+            visiting for business, relaxation, or a special occasion, Prime Time
+            Hotel offers a seamless blend of class, comfort, and unforgettable
+            moments.
+          </p>
         </div>
 
         {/* 💰 PRICE */}

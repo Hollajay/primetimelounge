@@ -6,6 +6,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { motion } from "framer-motion";
 import Breadcrumb from "@/components/ui/BreadCrumb";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function ReservationPage() {
   const [date, setDate] = useState(new Date());
@@ -24,8 +25,12 @@ export default function ReservationPage() {
           ]}
         />
 
-    <section className="min-h-screen bg-black text-white py-24 px-6">
+    <section className="min-h-screen bg-black text-white py-24 px-6 relative overflow-hidden">
+     {/* BACKGROUND GLOW */}
+         <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-500/20 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/20 blur-[120px]" />
 
+        {/* TITLE */}
       {/* 🔥 TITLE */}
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold">
@@ -48,6 +53,16 @@ export default function ReservationPage() {
           <label className="text-sm text-gray-400">Full Name</label>
           <input
             type="text"
+            placeholder="Enter your name"
+            className="w-full mt-2 px-4 py-3 bg-black/40 border border-white/10 rounded-lg outline-none focus:border-yellow-500"
+          />
+        </div>
+
+        {/* PHONE NUMBER */}
+         <div>
+          <label className="text-sm text-gray-400">Phone Number</label>
+          <input
+            type="tel"
             placeholder="Enter your name"
             className="w-full mt-2 px-4 py-3 bg-black/40 border border-white/10 rounded-lg outline-none focus:border-yellow-500"
           />
