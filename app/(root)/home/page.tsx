@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import "./home.css";
 import { UpcomingShows } from "@/components/upcomingCarousel/carousel";
 import { WeeklyActivities } from "@/components/WeeklyActivities";

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dumbbell, Waves, Goal, CircleDot } from "lucide-react";
+import Link from "next/link";
 
 const activities = [
   {
@@ -119,9 +120,11 @@ function Card({ item, index }: any) {
           </p>
 
           {/* 🔥 EXPLORE LINK */}
+          <Link href='/gym'>
           <span className="mt-3 text-yellow-400 text-sm opacity-0 group-hover:opacity-100 transition">
             Explore →
           </span>
+          </Link>
         </div>
 
         {/* 🔥 SOFT GLOW (CLEAN, NOT TOO MUCH) */}
