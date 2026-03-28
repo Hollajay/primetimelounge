@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const images = [
-  "/img/hero.jpg",
-  "/img/gallery2.jpg",
-  "/img/hero.jpg",
-  "/img/hero.jpg",
-  "/img/gallery5.jpg",
-  "/img/gallery6.jpg",
+  "/img/rooftop1.jpeg",
+  "/img/rooftop2.jpeg",
+  "/img/rooftop3.jpeg",
+  "/img/rooftop4.jpeg",
+  "/img/roottop3.jpeg",
+  "/img/rooftop3.jpeg",
 ];
 
 export function GallerySection() {

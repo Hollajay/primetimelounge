@@ -8,52 +8,52 @@ import { Dumbbell, Waves, Goal, CircleDot } from "lucide-react";
 const activities = [
   {
     title: "Monday",
-    subtitle: "Karoke Night",
-    details: "Host by Yemi . Dj pumpy",
-    image: "/img/rooftop1.jpeg",
-    
+    subtitle: "Karaoke Night",
+    details:
+      "Sing your heart out and own the stage 🎤. Enjoy special snooker discounts all night. Hosted by Yemi & DJ Pumpy bringing the vibes.",
+    image: "/img/karaoke.jpg",
   },
   {
     title: "Tuesday",
-    subtitle: "Night games under lights",
-    details: "5-a-side • Turf • Book slots",
+    subtitle: "Football Night",
+    details:
+      "5-a-side action under the lights. Gather your squad, book your slot, and enjoy intense night games on our premium turf.",
     image: "/img/primetime football.jpeg",
-    
   },
   {
-    title: "Wenesday",
-    subtitle: "Modern fitness zone",
-    details: "24/7 • Trainers available",
-    image: "/img/gym.jpg",
-   
+    title: "Wednesday",
+    subtitle: "Pool Party",
+    details:
+      "Midweek splash vibes. Chill, swim, and enjoy great music with refreshing drinks by the poolside.",
+    image: "/img/pool-party.jpg",
   },
   {
-    title: "Thurdays",
-    subtitle: "Premium snooker lounge",
-    details: "Private tables • Chill bar",
-    image: "/img/snooker.jpg",
-   
+    title: "Thursday",
+    subtitle: "Rooftop Vibes",
+    details:
+      "Elevate your night. Enjoy breathtaking views, cool breeze, music, and a premium rooftop experience.",
+    image: "/img/rooftop2.jpeg",
   },
   {
     title: "Friday",
-    subtitle: "Clound 9",
-    details: "Private tables • Chill bar",
-    image: "/img/snooker.jpg",
-    
+    subtitle: "Cloud 9 Experience",
+    details:
+      "Step into Cloud 9. Premium nightlife, top DJs, great drinks, and unforgettable party energy.",
+    image: "/img/cloud-9.jpg",
   },
   {
     title: "Saturday",
-    subtitle: "Premium snooker lounge",
-    details: "Private tables • Chill bar",
-    image: "/img/snooker.jpg",
-    
+    subtitle: "Ladies Party",
+    details:
+      "The weekend peak. Non-stop fun, music, games, and luxury vibes all night long.",
+    image: "/img/ladiesnight.jpg",
   },
   {
     title: "Sunday",
-    subtitle: "Clound 9",
-    details: "Private tables • Chill bar",
-    image: "/img/snooker.jpg",
-    
+    subtitle: "Juju Night",
+    details:
+      "End the week with classic vibes. Live Juju music, relaxation, and a rich cultural experience.",
+    image: "/img/juju.jpeg",
   },
 ];
 
@@ -111,7 +111,7 @@ function Card({ item, index }: any) {
           />
 
           {/* 🔥 DAY TAG (TOP LEFT) */}
-          <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-xs text-yellow-400 border border-yellow-500/30">
+          <div className="absolute top-3 left-3 bg-yellow-400  px-3 py-1 rounded-full text-xs text-white border border-yellow-500/30">
             {item.title}
           </div>
 

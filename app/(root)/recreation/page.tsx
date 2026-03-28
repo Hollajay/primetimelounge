@@ -23,6 +23,12 @@ const activities = [
     image: "/img/swimming.jpg",
     link: "/recreation/swimming",
   },
+  {
+  title: "Spa",
+  desc: "Indulge in ultimate relaxation at our luxury spa, where soothing treatments, calming ambiance, and expert care help you unwind, refresh, and rejuvenate your body and mind.",
+  image: "/img/spa.jpg",
+  link: "/recreation/spa",
+},
 ];
 
 export default function RecreationPage() {

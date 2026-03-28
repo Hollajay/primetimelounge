@@ -30,8 +30,15 @@ const activities = [
   },
 
   {
-    title: "Snooker",
-    subtitle: "Premium snooker lounge",
+    title: "Spa",
+    subtitle: "Prime time wellness spa",
+    image: "/img/spa.jpg",
+    icon: <CircleDot size={22} />,
+    link: "/recreation/spa",
+  },
+  {
+    title: "Snookers",
+    subtitle: "Prime time wellness spa",
     image: "/img/snooker.jpg",
     icon: <CircleDot size={22} />,
     link: "/recreation/snooker",
@@ -46,8 +53,8 @@ export function RecreationSection() {
 
       {/* Title */}
       <div className="text-center mb-16 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-wide">
-          Recreation Activities
+        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-wide">
+          RECREATION ACTIVITIES
         </h2>
         <p className="text-gray-400 mt-3">Experience luxury beyond nightlife</p>
       </div>
