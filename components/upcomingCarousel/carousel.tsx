@@ -133,7 +133,7 @@ function Card({ item }: any) {
   }, [item.time]);
 
   // 🌀 TILT EFFECT
-  const handleMove = (e) => {
+  const handleMove = (e: any) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
