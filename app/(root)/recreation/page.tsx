@@ -9,19 +9,19 @@ const activities = [
     title: "Fitness Hub",
     desc: "Stay active in our fully equipped gym, designed to keep you energized and refreshed throughout your stay.",
     image: "/img/gym.jpg",
-    link: "/gym",
+    link: "/recreation/gym",
   },
   {
     title: "Football Arena",
     desc: "Enjoy thrilling moments on our premium football pitch, perfect for friendly matches and competitive play.",
     image: "/img/football.jpg",
-    link: "/football",
+    link: "/recreation/football",
   },
   {
     title: "Swimming Experience",
     desc: "Relax and unwind in our luxurious swimming pool, offering a perfect blend of leisure and serenity.",
     image: "/img/swimming.jpg",
-    link: "/swimming",
+    link: "/recreation/swimming",
   },
 ];
 

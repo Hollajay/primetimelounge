@@ -7,35 +7,40 @@ import Link from "next/link";
 
 const activities = [
   {
-    title: "Swimming Pool",
-    subtitle: "Luxury poolside experience",
-    image: "/img/swimming.jpg",
-    icon: <Waves size={22} />,
+    title: "Gym",
+    subtitle: "Modern fitness zone",
+    image: "/img/gym.jpg",
+    icon: <Dumbbell size={22} />,
+    link: "/recreation/gym",
   },
   {
     title: "Football Pitch",
     subtitle: "Night games under lights",
     image: "/img/football.jpg",
     icon: <Goal size={22} />,
+    link: "/recreation/football",
   },
+
   {
-    title: "Gym",
-    subtitle: "Modern fitness zone",
-    image: "/img/gym.jpg",
-    icon: <Dumbbell size={22} />,
+    title: "Swimming Pool",
+    subtitle: "Luxury poolside experience",
+    image: "/img/swimming.jpg",
+    icon: <Waves size={22} />,
+    link: "/recreation/swimming",
   },
+
   {
     title: "Snooker",
     subtitle: "Premium snooker lounge",
     image: "/img/snooker.jpg",
     icon: <CircleDot size={22} />,
+    link: "/recreation/snooker",
   },
 ];
 
-export  function RecreationSection() {
+export function RecreationSection() {
   return (
     <section className="relative bg-black py-24 px-4 overflow-hidden">
-      
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[150px] -translate-x-1/2"></div>
 
@@ -44,9 +49,7 @@ export  function RecreationSection() {
         <h2 className="text-4xl md:text-5xl font-bold text-white tracking-wide">
           Recreation Activities
         </h2>
-        <p className="text-gray-400 mt-3">
-          Experience luxury beyond nightlife
-        </p>
+        <p className="text-gray-400 mt-3">Experience luxury beyond nightlife</p>
       </div>
 
       {/* Grid */}
@@ -59,7 +62,7 @@ export  function RecreationSection() {
   );
 }
 
-/* ================= CARD ================= */
+
 
 function Card({ item, index }: any) {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
@@ -69,8 +72,8 @@ function Card({ item, index }: any) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const rotateX = ((y / rect.height) - 0.5) * 12;
-    const rotateY = ((x / rect.width) - 0.5) * -12;
+    const rotateX = (y / rect.height - 0.5) * 12;
+    const rotateY = (x / rect.width - 0.5) * -12;
 
     setRotate({ x: rotateX, y: rotateY });
   };
@@ -85,51 +88,47 @@ function Card({ item, index }: any) {
       viewport={{ once: true }}
       className="perspective"
     >
-      <div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={reset}
-        style={{
-          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-        }}
-        className="relative h-[320px] rounded-2xl overflow-hidden transition-transform duration-300 group"
-      >
-        {/* 🔥 IMAGE */}
-        <img
-          src={item.image}
-          alt={item.title}
-          className="absolute inset-0 w-full h-full object-cover 
-          group-hover:scale-110 transition duration-700"
-        />
+      <Link href={item.link} className="block">
+        <div
+          onMouseMove={handleMouseMove}
+          onMouseLeave={reset}
+          style={{
+            transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+          }}
+          className="relative h-[320px] rounded-2xl overflow-hidden transition-transform duration-300 group cursor-pointer"
+        >
+          {/* IMAGE */}
+          <img
+            src={item.image}
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover 
+            group-hover:scale-110 transition duration-700"
+          />
 
-        {/* 🔥 GRADIENT OVERLAY (NOT TOO DARK) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          {/* OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-        {/* 🔥 CONTENT */}
-        <div className="relative h-full p-6 flex flex-col justify-end">
-          
-          <div className="mb-3 text-yellow-400 group-hover:scale-110 transition">
-            {item.icon}
+          {/* CONTENT */}
+          <div className="relative h-full p-6 flex flex-col justify-end">
+            <div className="mb-3 text-yellow-400 group-hover:scale-110 transition">
+              {item.icon}
+            </div>
+
+            <h3 className="text-white text-xl font-semibold tracking-wide">
+              {item.title}
+            </h3>
+
+            <p className="text-gray-300 text-sm mt-1">{item.subtitle}</p>
+
+            <span className="mt-3 text-yellow-400 text-sm opacity-0 group-hover:opacity-100 transition">
+              Explore →
+            </span>
           </div>
 
-          <h3 className="text-white text-xl font-semibold tracking-wide">
-            {item.title}
-          </h3>
-
-          <p className="text-gray-300 text-sm mt-1">
-            {item.subtitle}
-          </p>
-
-          {/* 🔥 EXPLORE LINK */}
-          <Link href='/gym'>
-          <span className="mt-3 text-yellow-400 text-sm opacity-0 group-hover:opacity-100 transition">
-            Explore →
-          </span>
-          </Link>
+          {/* GLOW */}
+          <Link href={item.link} className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 shadow-[0_0_30px_rgba(255,215,0,0.4)]"></Link>
         </div>
-
-        {/* 🔥 SOFT GLOW (CLEAN, NOT TOO MUCH) */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 shadow-[0_0_30px_rgba(255,215,0,0.4)]"></div>
-      </div>
+      </Link>
     </motion.div>
   );
 }

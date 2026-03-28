@@ -55,14 +55,14 @@ export default function WhyChooseUs() {
                 {/* ICON */}
                 <div className="mt-1">
                   <Check
-                    className="text-green-500 group-hover:scale-110 transition"
+                    className="text-yellow-500 group-hover:scale-110 transition"
                     size={20}
                   />
                 </div>
 
                 {/* TEXT */}
                 <div>
-                  <h4 className="font-semibold group-hover:text-red-500 transition">
+                  <h4 className="font-semibold group-hover:text-yellow-500 transition">
                     {item.title}
                   </h4>
                   <p className="text-gray-400 text-sm">

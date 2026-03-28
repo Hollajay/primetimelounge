@@ -10,6 +10,7 @@ import { TestimonialSlider } from "@/components/gymsections/Testimonial";
 import PricingSection from "@/components/gymsections/PricingSection";
 import { Footer } from "@/components/footer/Footer";
 import WhyChooseUs from "@/components/gymsections/WhyChooseUs";
+import Breadcrumb from "@/components/ui/BreadCrumb";
 
 const testimonials = [
   {
@@ -72,7 +73,15 @@ export default function Gym() {
   return (
     <div className="w-full bg-black text-white">
       <Navbar />
-
+          <Breadcrumb
+                  title="Gymnasium"
+                  image="/img/hero.jpg"
+                  items={[
+                    { name: "Home", href: "/" },
+                    { name: "Reservation", href: "/recreation" },
+                     { name: "gym" },
+                  ]}
+                />
       {/* 🔥 HERO */}
       <section className="relative h-screen w-full">
         <Image
