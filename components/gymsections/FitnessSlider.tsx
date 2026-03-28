@@ -64,7 +64,7 @@ export default function FitnessGrid() {
 
             {/* CONTENT */}
             <div className="relative p-6">
-              <h3 className="text-xl font-semibold group-hover:text-red-500 transition">
+              <h3 className="text-xl font-semibold group-hover:text-yello-500 transition">
                 {item.title}
               </h3>
 
@@ -75,7 +75,7 @@ export default function FitnessGrid() {
 
             {/* GLOW EFFECT */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none">
-              <div className="absolute inset-0 bg-red-500/10 blur-2xl" />
+              <div className="absolute inset-0 bg-yellow-500/10 blur-2xl" />
             </div>
           </motion.div>
         ))}

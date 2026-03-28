@@ -95,7 +95,7 @@ export default function Gym() {
             Elevate your fitness experience in a premium environment designed
             for strength, wellness, and performance.
           </p>
-          <button className="mt-6 px-6 py-3 bg-red-500 rounded-full hover:scale-105 transition">
+          <button className="mt-6 px-6 py-3 bg-yellow-500 rounded-full hover:scale-105 transition">
             Learn More
           </button>
         </div>

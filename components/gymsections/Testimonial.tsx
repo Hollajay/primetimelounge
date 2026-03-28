@@ -78,11 +78,11 @@ export function TestimonialSlider() {
                   <img
                     src={item.avatar}
                     alt={item.name}
-                    className="w-12 h-12 rounded-full bg-red-700 object-cover border border-white/20"
+                    className="w-12 h-12 rounded-full bg-yellow-700 object-cover border border-white/20"
                   />
 
                   <div>
-                    <h4 className="font-semibold group-hover:text-red-500 transition">
+                    <h4 className="font-semibold group-hover:text-yellow-500 transition">
                       {item.name}
                     </h4>
                     <p className="text-gray-500 text-xs">Member</p>

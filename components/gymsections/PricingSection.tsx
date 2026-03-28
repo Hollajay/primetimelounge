@@ -58,16 +58,16 @@ export default function PricingSection() {
             className={`relative rounded-2xl p-8 border transition duration-500
               ${
                 plan.popular
-                  ? "border-red-500 bg-white/10 scale-105"
+                  ? "border-yelloe-500 bg-white/10 scale-105"
                   : "border-white/10 bg-white/5 hover:bg-white/10"
               }
-              hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(255,0,0,0.2)]
+              hover:-translate-y-3 hover:shadow-[0_0_40px_rgba(255,225,0,0.2)]
             `}
           >
 
             {/* POPULAR BADGE */}
             {plan.popular && (
-              <div className="absolute top-0 right-0 bg-red-500 px-4 py-1 text-xs rounded-bl-xl rounded-tr-xl">
+              <div className="absolute top-0 right-0 bg-yellow-500 px-4 py-1 text-xs rounded-bl-xl rounded-tr-xl">
                 MOST POPULAR
               </div>
             )}
@@ -78,7 +78,7 @@ export default function PricingSection() {
             </h3>
 
             {/* PRICE */}
-            <p className="text-4xl font-bold text-red-500 mb-6">
+            <p className="text-4xl font-bold text-yellow-500 mb-6">
               {plan.price}
               <span className="text-sm text-gray-400"> / month</span>
             </p>
@@ -94,7 +94,7 @@ export default function PricingSection() {
             </ul>
 
             {/* BUTTON */}
-            <button className="w-full py-3 rounded-full bg-red-500 text-white font-semibold hover:scale-105 transition">
+            <button className="w-full py-3 rounded-full bg-yellow-500 text-white font-semibold hover:scale-105 transition">
               Get Started
             </button>
           </motion.div>
