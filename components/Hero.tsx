@@ -39,7 +39,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[80vh] md:h-screen w-full overflow-hidden">
       
       {/* 🔥 SLIDES */}
       {slides.map((slide, i) => (
@@ -96,9 +96,9 @@ export default function HeroSlider() {
             Book Reservation
           </Link>
 
-          <button className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
+          <Link href={'#'} className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
             Explore More
-          </button>
+          </Link>
         </div>
       </div>
 
