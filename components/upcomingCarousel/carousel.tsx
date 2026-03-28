@@ -102,7 +102,7 @@ export function UpcomingShows() {
 
 /* ================= CARD ================= */
 
-function Card({ item }) {
+function Card({ item }: any) {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [timeLeft, setTimeLeft] = useState("");
 
