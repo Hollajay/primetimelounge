@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <>
       {/* 🔥 NAVBAR */}
-      <nav className="fixed  top-0 left-0  w-full  z-50 py-4  ">
+      <nav className="fixed  top-0 left-0  w-full  z-100 py-4  ">
         <div className="max-w-7xl mx-auto px-6  flex gap-8 items-center justify-between md:justify-center">
 
           {/* LEFT LINKS */}
@@ -61,33 +61,50 @@ export default function Navbar() {
 
       {/* 🔥 MOBILE MENU */}
       <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.6 }}
-            className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-8"
+  {open && (
+    <motion.div
+      initial={{ opacity: 0, y: "-100%" }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: "-100%" }}
+      transition={{ duration: 0.6 }}
+      className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-8"
+    >
+      
+      {/* 🔥 HOME (always first) */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0 }}
+      >
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className=" text-white text-2xl font-semibold hover:text-yellow-400 transition"
+        >
+          Home
+        </Link>
+      </motion.div>
+
+      {/* 🔥 OTHER LINKS */}
+      {[...leftLinks, ...rightLinks].map((link, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: (i + 1) * 0.1 }} // shift delay
+        >
+          <Link
+            href={link.href}
+            onClick={() => setOpen(false)}
+            className="text-white text-2xl font-semibold hover:text-yellow-400 transition"
           >
-            {[...leftLinks, ...rightLinks].map((link, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-white text-2xl font-semibold hover:text-yellow-400 transition"
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {link.name}
+          </Link>
+        </motion.div>
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
     </>
   );
 }

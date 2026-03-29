@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const slides = [
-  { type: "video", src: "/video/hero.mp4" },
+  { type: "image", src: "/img/heroslider1.jpg" },
   { type: "image", src: "/img/hero.jpg" },
   { type: "image", src: "/img/Primetime lounge.jpeg" },
   { type: "video", src: "/video/hero.mp4" },
@@ -12,22 +12,6 @@ const slides = [
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
-
-  // 🔥 Typing Effect
-  const fullText = "Prime Time Lounge";
-  const [text, setText] = useState("");
-  const [i, setI] = useState(0);
-
-  useEffect(() => {
-    if (i < fullText.length) {
-      const timeout = setTimeout(() => {
-        setText((prev) => prev + fullText[i]);
-        setI(i + 1);
-      }, 70);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [i]);
 
   // 🔥 Auto Slide
   useEffect(() => {
@@ -39,8 +23,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-[80vh] md:h-screen w-full overflow-hidden">
-      
+    <section className="relative h-[80vh] md:h-screen  w-full overflow-hidden">
       {/* 🔥 SLIDES */}
       {slides.map((slide, i) => (
         <div
@@ -76,13 +59,10 @@ export default function HeroSlider() {
 
       {/* 🔥 CONTENT */}
       <div className="absolute inset-0 z-40 flex flex-col items-center justify-center text-center px-4">
-        <p className="text-gray-300 mt-4 text-2xl tracking-wide">
-          Welcome to
-        </p>
-        {/* ✨ AUTO TYPING TEXT */}
+        <p className="text-gray-300 mt-4 text-2xl tracking-wide">Welcome to</p>
+
         <h1 className="md:text-[80px] text-[38px] text-white font-bold tracking-widest font-serif">
-          {text}
-          <span className="animate-pulse">|</span>
+          <span className="animate-pulse">Prime Time Lounge</span>
         </h1>
 
         {/* ✨ SUBTEXT */}
@@ -92,18 +72,27 @@ export default function HeroSlider() {
 
         {/* ✨ BUTTONS */}
         <div className="flex gap-4 mt-6 flex-wrap justify-center">
-          <Link href={'/reservation'} className="px-6 py-3 border border-yellow-500 animate-pulse bg-yellow-600 text-white rounded-full hover:bg-white hover:text-black transition">
+          <Link
+            href={"/reservation"}
+            className="px-6 py-3 border border-yellow-500 animate-pulse bg-yellow-600 text-white rounded-full hover:bg-white hover:text-black transition"
+          >
             Book Reservation
           </Link>
 
-          <Link href={'#'} className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
+          <button
+            onClick={() => {
+              const section = document.getElementById("next-section");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-black transition"
+          >
             Explore More
-          </Link>
+          </button>
         </div>
       </div>
 
       {/* 🔥 PROGRESS BARS */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-50">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-40">
         {slides.map((_, i) => (
           <div key={i} className="w-10 h-[3px] bg-white/30 overflow-hidden">
             <div

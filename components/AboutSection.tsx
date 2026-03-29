@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-black py-24 px-6 overflow-hidden">
+    <section id="next-section" className="relative bg-black py-24 px-6 overflow-hidden">
+
+      <Particles />
 
       {/* 🔥 Background Glow */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[150px] -translate-x-1/2 -translate-y-1/2"></div>
@@ -34,7 +36,7 @@ export default function AboutSection() {
           <Image
             width={600}
             height={700}
-            src="/img/Primetime lounge.jpeg"
+            src="/img/toss.jpg"
             alt="Prime Time Lounge"
             className="w-full h-[500px] object-cover rounded-2xl"
           />
@@ -78,5 +80,23 @@ export default function AboutSection() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function Particles() {
+  return (
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      {[...Array(30)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-1 h-1 bg-yellow-400 rounded-full animate-ping"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDuration: `${2 + Math.random() * 3}s`,
+          }}
+        />
+      ))}
+    </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Dumbbell, Waves, Goal, CircleDot } from "lucide-react";
+import { Dumbbell, Waves, Goal, CircleDot, Leaf } from "lucide-react";
 import Link from "next/link";
 
 const activities = [
@@ -33,12 +33,12 @@ const activities = [
     title: "Spa",
     subtitle: "Prime time wellness spa",
     image: "/img/spa.jpg",
-    icon: <CircleDot size={22} />,
+     icon: <Leaf size={22} />,
     link: "/recreation/spa",
   },
   {
     title: "Snookers",
-    subtitle: "Prime time wellness spa",
+    subtitle: "Classic billiards experience",
     image: "/img/snooker.jpg",
     icon: <CircleDot size={22} />,
     link: "/recreation/snooker",

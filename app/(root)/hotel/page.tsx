@@ -6,10 +6,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const slides = [
-  "/img/hero.jpg",
-  "/img/hero.jpg",
-  "/img/hero.jpg",
-  "/img/hero.jpg",
+  "/img/hotelroom1.jpg",
+  "/img/hotelroom2.jpg",
+  "/img/hotelroom3.jpg",
+  "/img/hotelrrom4.jpg",
 ];
 
 export default function HotelBookingPage() {

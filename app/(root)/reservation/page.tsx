@@ -63,7 +63,7 @@ export default function ReservationPage() {
           <label className="text-sm text-gray-400">Phone Number</label>
           <input
             type="tel"
-            placeholder="Enter your name"
+            placeholder="Enter your phone number"
             className="w-full mt-2 px-4 py-3 bg-black/40 border border-white/10 rounded-lg outline-none focus:border-yellow-500"
           />
         </div>

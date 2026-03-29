@@ -9,12 +9,12 @@ import Breadcrumb from "@/components/ui/BreadCrumb";
 const categories = ["All", "Lounge", "Events", "Pool", "Nightlife"];
 
 const images = [
-  { src: "/img/gallery1.jpg", category: "Lounge" },
-  { src: "/img/gallery2.jpg", category: "Events" },
-  { src: "/img/gallery3.jpg", category: "Pool" },
-  { src: "/img/gallery4.jpg", category: "Nightlife" },
-  { src: "/img/gallery5.jpg", category: "Lounge" },
-  { src: "/img/gallery6.jpg", category: "Events" },
+  { src: "/img/rooftop1.jpeg", category: "Lounge" },
+  { src: "/img/juju.jpeg", category: "Events" },
+  { src: "/img/spa.jpg", category: "Pool" },
+  { src: "/img/karaoke.jpg", category: "Nightlife" },
+  { src: "/img/rooftop4.jpeg", category: "Lounge" },
+  { src: "/img/singfinity.jpeg", category: "Events" },
 ];
 
 export default function GalleryPage() {
