@@ -69,9 +69,9 @@ export function Footer() {
         {/* 📞 CONTACT */}
         <div>
           <h4 className="text-white text-2xl font-semibold mb-4">Contact</h4>
-          <p className="text-gray-400">Ibadan, Nigeria</p>
-          <p className="text-gray-400 mt-2">+234 000 000 0000</p>
-          <p className="text-gray-400 mt-2">info@primetime.com</p>
+          <p className="text-gray-400 text-lg ">Ibadan, Nigeria</p>
+          <p className="text-gray-400 text-lg mt-2">+234 000 000 0000</p>
+          <p className="text-gray-400 text-lg mt-2">info@primetime.com</p>
         </div>
 
         {/* 🌐 SOCIAL */}
